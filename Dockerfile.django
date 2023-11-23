@@ -1,0 +1,19 @@
+FROM python:3.7
+
+
+WORKDIR /mybackend
+
+RUN pip3 install Django==3.2
+RUN pip3 install numpy
+RUN pip3 install pandas
+RUN pip3 install joblib
+RUN pip3 install matplotlib
+RUN pip3 install seaborn
+RUN pip3 install scikit-learn
+RUN pip3 install django djangorestframework
+RUN pip3 install django-cors-headers
+RUN pip3 install imblearn
+
+COPY ./cp /mybackend/
+
+CMD tail -f /dev/null

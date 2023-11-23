@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Example</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f7;
+            color: #333;
+        }
+
+        /* Card styles */
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 30px auto;
+            padding: 20px;
+            width: 1000px;
+            text-align: center;
+        }
+
+        .card img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .card p {
+            margin: 10px 0;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(45deg, #0a749b, #0b4192); /* Futuristic gradient */
+            color: white;
+            height: 65px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            color: white;
+            justify-self: start;
+            margin-left: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            font-family: 'Roboto', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            text-align: center;
+            margin-right: 25px;
+        }
+
+        .nav-item {
+            line-height: 65px;
+            margin-right: 25px;
+        }
+
+        .nav-links {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            font-family: 'Montserrat', sans-serif;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .nav-links:hover {
+            color: #f0f0f0;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            transform: scale(1.05);
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-menu {
+                display: none; /* Hide the navbar on small screens */
+                /* Consider adding a hamburger menu here */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/" class="nav-logo">Diabetes Prediction</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/" class="nav-links">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/apis_doc" class="nav-links">APIs</a>
+                </li>
+                <!-- Add other nav items here if needed -->
+            </ul>
+        </div>
+    </nav>
+    <div class="card">
+        <img src="{% static 'Postman.jpg' %}" alt="Card Image">
+        <h2>Using Postman</h2>
+        <p>In this example, you can make a POST Request using the data format shown in the picture</p>
+        <p>Replace the URL with http:\\ec2-54-209-225-53.compute-1.amazonaws.com</p>
+    </div>
+    <div class="card">
+        <img src="{% static 'Javascript.jpg' %}" alt="Card Image">
+        <h2>Using Javascript</h2>
+        <p>In this example, you can make a POST Request using Javascript methods</p>
+        <p>Replace the URL with http:\\ec2-54-209-225-53.compute-1.amazonaws.com</p>
+    </div>
+</body>
+</html>

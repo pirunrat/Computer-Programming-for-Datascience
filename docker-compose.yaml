@@ -1,0 +1,18 @@
+version: '3'
+services:
+
+# This is the configuration of django
+  backend:
+    command: ["python","manage.py","runserver", "0.0.0.0:80"]
+    image: cp-project:v8.0
+    build:
+      context: .
+      dockerfile: Dockerfile.django
+    environment:
+      - HOST=0.0.0.0
+      - PORT=80
+    ports:
+      - "8000:80"
+    volumes:
+      - ./cp:/root/cp
+      - ./.vscode-server:/root/.vscode-server
